@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mariage d'Aurélien & Laeticia</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">A & L</div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Accueil</a></li>
+                <li><a href="#story" class="nav-link">Notre Histoire</a></li>
+                <li><a href="#details" class="nav-link">Détails</a></li>
+                <li><a href="#gallery" class="nav-link">Galerie</a></li>
+                <li><a href="#rsvp" class="nav-link">RSVP</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Section Hero -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">Aurélien & Laeticia</h1>
+                <p class="hero-subtitle">Nous nous marions !</p>
+                <div class="wedding-date">
+                    <i class="fas fa-heart"></i>
+                    <span>15 Juin 2024</span>
+                    <i class="fas fa-heart"></i>
+                </div>
+                <div class="countdown" id="countdown">
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="days">00</span>
+                        <span class="countdown-label">Jours</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="hours">00</span>
+                        <span class="countdown-label">Heures</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="minutes">00</span>
+                        <span class="countdown-label">Minutes</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="seconds">00</span>
+                        <span class="countdown-label">Secondes</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-overlay"></div>
+    </section>
+
+    <!-- Section Notre Histoire -->
+    <section id="story" class="story">
+        <div class="container">
+            <h2 class="section-title">Notre Histoire d'Amour</h2>
+            <div class="story-timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">2019</div>
+                    <div class="timeline-content">
+                        <h3>Notre Rencontre</h3>
+                        <p>Tout a commencé par un regard échangé dans un café parisien. Ce fut le coup de foudre instantané qui a changé nos vies à jamais.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2021</div>
+                    <div class="timeline-content">
+                        <h3>Premier Voyage</h3>
+                        <p>Notre première escapade romantique en Toscane, où nous avons découvert que nous étions faits l'un pour l'autre.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2023</div>
+                    <div class="timeline-content">
+                        <h3>La Demande</h3>
+                        <p>Sur la plage au coucher du soleil, Aurélien a demandé Laeticia en mariage. Elle a dit OUI sans hésitation !</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2024</div>
+                    <div class="timeline-content">
+                        <h3>Le Grand Jour</h3>
+                        <p>Aujourd'hui, nous célébrons notre amour entourés de nos proches les plus chers.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Détails du Mariage -->
+    <section id="details" class="details">
+        <div class="container">
+            <h2 class="section-title">Détails du Mariage</h2>
+            <div class="details-grid">
+                <div class="detail-card">
+                    <div class="detail-icon">
+                        <i class="fas fa-church"></i>
+                    </div>
+                    <h3>Cérémonie</h3>
+                    <p><strong>15h00</strong></p>
+                    <p>Église Saint-Pierre</p>
+                    <p>123 Rue de l'Amour, Paris</p>
+                    <button class="btn-map" onclick="openMap('ceremony')">Voir sur la carte</button>
+                </div>
+                <div class="detail-card">
+                    <div class="detail-icon">
+                        <i class="fas fa-glass-cheers"></i>
+                    </div>
+                    <h3>Réception</h3>
+                    <p><strong>18h00</strong></p>
+                    <p>Château de Versailles</p>
+                    <p>Place d'Armes, Versailles</p>
+                    <button class="btn-map" onclick="openMap('reception')">Voir sur la carte</button>
+                </div>
+                <div class="detail-card">
+                    <div class="detail-icon">
+                        <i class="fas fa-music"></i>
+                    </div>
+                    <h3>Soirée Dansante</h3>
+                    <p><strong>21h00</strong></p>
+                    <p>Même lieu que la réception</p>
+                    <p>Danse jusqu'au bout de la nuit !</p>
+                    <button class="btn-map" onclick="showPlaylist()">Playlist</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Galerie -->
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <h2 class="section-title">Nos Moments Précieux</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="openModal(1)">
+                    <div class="gallery-placeholder">
+                        <i class="fas fa-heart"></i>
+                        <p>Notre première photo</p>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openModal(2)">
+                    <div class="gallery-placeholder">
+                        <i class="fas fa-ring"></i>
+                        <p>La demande en mariage</p>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openModal(3)">
+                    <div class="gallery-placeholder">
+                        <i class="fas fa-camera"></i>
+                        <p>Séance engagement</p>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openModal(4)">
+                    <div class="gallery-placeholder">
+                        <i class="fas fa-plane"></i>
+                        <p>Nos voyages</p>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openModal(5)">
+                    <div class="gallery-placeholder">
+                        <i class="fas fa-users"></i>
+                        <p>En famille</p>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openModal(6)">
+                    <div class="gallery-placeholder">
+                        <i class="fas fa-gift"></i>
+                        <p>Moments spéciaux</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section RSVP -->
+    <section id="rsvp" class="rsvp">
+        <div class="container">
+            <h2 class="section-title">Confirmez votre Présence</h2>
+            <div class="rsvp-content">
+                <p class="rsvp-text">Votre présence à notre mariage nous ferait énormément plaisir. Merci de confirmer avant le 1er Mai 2024.</p>
+                <form class="rsvp-form" id="rsvpForm">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" placeholder="Votre nom complet" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" placeholder="Votre email" required>
+                    </div>
+                    <div class="form-group">
+                        <select id="attendance" name="attendance" required>
+                            <option value="">Confirmez votre présence</option>
+                            <option value="yes">Oui, je serai présent(e)</option>
+                            <option value="no">Non, je ne pourrai pas venir</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <input type="number" id="guests" name="guests" placeholder="Nombre d'invités" min="1" max="4">
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" placeholder="Un petit message pour les mariés (optionnel)" rows="4"></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit">Envoyer ma réponse</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>Aurélien & Laeticia</h3>
+                    <p>15 Juin 2024</p>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact</h4>
+                    <p>Pour toute question :</p>
+                    <p>📧 mariage@aurelien-laeticia.fr</p>
+                    <p>📱 06 12 34 56 78</p>
+                </div>
+                <div class="footer-social">
+                    <h4>Partagez notre bonheur</h4>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    </div>
+                    <p class="hashtag">#AurelienLaeticia2024</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Aurélien & Laeticia. Créé avec ❤️ pour notre mariage.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal pour la galerie -->
+    <div id="galleryModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="modal-body">
+                <div class="modal-placeholder">
+                    <i class="fas fa-heart"></i>
+                    <h3 id="modalTitle">Titre de l'image</h3>
+                    <p id="modalDescription">Description de l'image</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
